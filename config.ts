@@ -1,1 +1,1 @@
-export const FACEPALM_URL = `http://i.imgur.com/K5Zvuse.jpg`;
+export const FACEPALM_URL = `http://i.imgur.com/K5Zvuse.jpg?1`;

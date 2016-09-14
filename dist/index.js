@@ -10,9 +10,8 @@ var app = connect()
     res.statusCode = 200;
     res.setHeader('Content-Type', 'application/json');
     var response = {
-        text: body.text || '',
         response_type: 'in_channel',
-        attachments: [{ image_url: config_1.FACEPALM_URL }]
+        attachments: [{ image_url: config_1.FACEPALM_URL, text: body.text || '' }]
     };
     res.write(JSON.stringify(response), function () {
         res.end();

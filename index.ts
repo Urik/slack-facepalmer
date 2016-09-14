@@ -10,8 +10,7 @@ interface SlackMessage {
 
 interface ImageResponse {
     response_type: string,
-    text: string,
-    attachments: { image_url: string }[]
+    attachments: { text: string, image_url: string }[]
 }
 
 interface ParsedIncomingMessage<V> extends IncomingMessage {
@@ -24,9 +23,8 @@ const app = connect()
         res.statusCode = 200;
         res.setHeader('Content-Type', 'application/json');
         const response: ImageResponse = {
-            text: body.text || '',
             response_type: 'in_channel',
-            attachments: [{ image_url: FACEPALM_URL }]
+            attachments: [{ image_url: FACEPALM_URL, text: body.text || '' }]
         };
         res.write(JSON.stringify(response), () => {
             res.end();

@@ -22,6 +22,7 @@ const app = connect()
     .use(bodyParser.urlencoded({extended: true}))
     .use(({ body }: ParsedIncomingMessage<SlackMessage>, res: ServerResponse) => {
         res.statusCode = 200;
+        res.setHeader('Content-Type', 'application/json');
         const response: ImageResponse = {
             text: body.text || '',
             response_type: 'in_channel',

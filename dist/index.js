@@ -8,6 +8,7 @@ var app = connect()
     .use(function (_a, res) {
     var body = _a.body;
     res.statusCode = 200;
+    res.setHeader('Content-Type', 'application/json');
     var response = {
         text: body.text || '',
         response_type: 'in_channel',

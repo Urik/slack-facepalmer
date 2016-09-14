@@ -10,13 +10,14 @@ var app = connect()
     res.statusCode = 200;
     var response = {
         text: body.text || '',
+        response_type: 'in_channel',
         attachments: [{ image_url: config_1.FACEPALM_URL }]
     };
     res.write(JSON.stringify(response), function () {
         res.end();
     });
 });
-var PORT = process.env.NODE_PORT || 3000;
+var PORT = process.env.PORT || 3000;
 http_1.createServer(app).listen(PORT, function () {
     console.log("Listening in " + PORT);
 });

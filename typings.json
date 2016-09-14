@@ -1,0 +1,6 @@
+{
+  "globalDependencies": {
+    "connect": "registry:dt/connect#3.4.0+20160317120654",
+    "node": "registry:dt/node#6.0.0+20160909174046"
+  }
+}
